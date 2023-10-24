@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Program Author: Kirsten Tran - w10015360 
+   Assignment: Program 3 Morse Code Player
+Description: This Page cotains the front-end code of the apps including some formatting and a button to demonstrate playing sounds
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="CSC_317_Program_3_Idea_Morse_Code_Player.MainPage"
+             Title="Morse Code Simulator"
+             >
+
+    <VerticalStackLayout
+            VerticalOptions="FillAndExpand"
+        >
+        <VerticalStackLayout>
+            <!--
+                I am using the MediaElement Community Toolkit extension to support
+                support playing sounds in my MAUI app.  These controls link to the
+                sound files in Resources->Raw 
+            -->
+            <toolkit:MediaElement x:Name="dash" IsVisible="false"
+                Source="embed://dah.wav" />
+
+            <toolkit:MediaElement x:Name="dot" IsVisible="false"
+                Source="embed://dit.wav" />
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="10"
+            MaximumWidthRequest="500"
+            BackgroundColor="#EEEEFF"
+            VerticalOptions="FillAndExpand"
+            HeightRequest="1000"
+            >
+            <!-- ********************************************************************************
+                 *
+                 *  Note that you will need to add the rest of the GUI controls to complete the front-end. 
+                 *
+                 ********************************************************************************
+            -->
+            <Label Text ="This program simulates the tranmission of Morse Code by playing the sound of dots and dashes. Enter your message below and click the simulate button top begin translation."
+                   HorizontalTextAlignment="Center"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,40"/>
+            <Entry Placeholder="enter you message here….. " 
+                   x:Name="input"
+                   MaxLength="250"
+                   BackgroundColor ="White"
+                   TextColor="Black"
+                   FontSize="15"
+                   />
+            <Label
+                Text=" "
+                BackgroundColor="#DDDDDD"
+                   Padding="5,10,50,10"
+                   Margin="0,10,0,10"
+                   FontSize="18"
+                   HeightRequest="200"
+                   x:Name="output"
+                    />
+
+            <Button
+                Clicked="SimulateMorse"
+                Text="Simulate"
+                x:Name="btnSimulate"
+                MaximumWidthRequest="200"
+                FontSize="25"
+                />
+
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
